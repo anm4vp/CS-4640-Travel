@@ -6,6 +6,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 
@@ -27,49 +28,146 @@
   <center>
     <h1> Sign Up </h1>
     <div class="signup">
-      <form method="post" action="#">
-
-        <label for="first">First Name:</label>
-        <input type="text" id="first" name="firstname">
-        <br>
-        <label for="last">Last Name:</label>
-        <input type="text" id="last" name="lastname">
-        <br>
-        <label for="username">User Name:</label>
+      <form method="POST" name="signup" action="#" onsubmit="return formValidation();">
+        <label for="username">Username:</label>
         <input type="text" id="username" name="username">
         <br>
-        <label for="pw">Password:</label28>
-          <input type="password" id="password" name="password">
-          <br>
-          <label for="pw">Confirm Password:</label28>
-            <input type="password" id="password2" name="Password2">
-            <br><br>
-            <input type="submit" value="Submit">
-            <br><br>
-          </form>
-        </div>
-      </center>
+        <labelfor="pw">Password:</label>
+        <input type="password" name="password" pattern=".{6,}" title="Six or more characters">
+        <br>
+        <label for="pw">Confirm Password:</label>
+        <input type="password" name="Password2" pattern=".{6,}" title="Six or more characters">
+        <br>
+        <label for="First">First Name:</label>
+        <input type="text" id="First"name="FirstName">
+        <br>
+        <label for="Last">Last Name:</label>
+        <input type="text" id="Last" name = "LastName">
+        <br>
+        <label for="Email">E-mail:</label>
+        <input type="text" name="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+        <br>
+        <input type="submit" value="Create Account">
+      </br>
+    </form>
+  </div>
+</center>
 
-      <!--  Footer -->
-      <footer id="footer">
+<!--  Footer -->
+<footer id="footer">
 
-        <p class="left">Copyright © 2017</p>
-        <p class="right">Designed by xxxxxx</p>
-
-
-        <center>
-          <a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a>
-          <a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a>
-          <a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a>
-          <a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a>
-          <a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a>
+  <p class="left">Copyright © 2017</p>
+  <p class="right">Designed by xxxxxx</p>
 
 
-          <ul class="copyright">
-            <li>&copy; Travel</li>
-          </ul>
-        </center>
-      </footer>
+  <center>
+    <a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a>
+    <a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a>
+    <a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a>
+    <a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a>
+    <a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a>
 
-    </body>
-    </html>
+
+    <ul class="copyright">
+      <li>&copy; Travel</li>
+    </ul>
+  </center>
+</footer>
+
+<!-- Script -->
+
+<!-- Form Validation-->
+<script type="text/javascript">
+function formValidation(){
+  var user = document.signup.username;
+  var firstnname = document.signup.FirstName;
+  var lastname = document.signup.LastName;
+  var email = document.signup.Email;
+  var pw = document.signup.password;
+  var pw2 = document.signup.Password2;
+  if(!userVal(user) || !pass(pw) || !pass2(pw2) || !pwVal(pw, pw2) || !nameVal(firstnname, lastname) || ! emailVal(email)){
+    return false;
+  }
+  return true;
+
+}
+
+function userVal(user){
+  if(user.value.length == 0){
+    alert("Username field is empty");
+    user.focus();
+    return false;
+  }
+  return true;
+}
+
+function pass(pw) {
+  if(pw.value.length == 0){
+    alert("Password field is empty");
+    pw.focus();
+    return false;
+  }
+  return true;
+}
+
+function pass2(pw2) {
+  if(pw2.value.length == 0){
+    alert("Confirm Password field is empty");
+    pw2.focus();
+    return false;
+  }
+  return true;
+}
+
+function nameVal(firstnname, lastname){
+  var allLetters = /^[A-Za-z]+$/;
+  if(!firstnname.value.match(allLetters)){
+    alert("First name not valid");
+    firstnname.focus();
+    return false;
+  }
+  if(!lastname.value.match(allLetters)){
+    alert("Last name not valid");
+    lastname.focus();
+    return false;
+  }
+  return true;
+}
+
+function emailVal(email){
+  var emailcheck = /^([A-Za-z0-9._-])+@([a-z])+\.([a-z.])+$/;
+  if(!email.value.match(emailcheck)){
+    alert("Email is invalid");
+    email.focus();
+    return false;
+  }
+  return true;
+}
+
+function pwVal(pw){
+  if(pw.value.length == 0){
+    alert("Username field is empty");
+    user.focus();
+    return false;
+  }
+  return true;
+}
+
+function pwVal(pw, pw2){
+  if(pw.value != pw2.value) {
+    alert("Passwords must be the same");
+    pw.focus();
+    pw2.focus();
+    return false;
+  } else if (pw.value.length > 30){
+    alert("Passwords length invalid");
+    pw.focus();
+    pw2.focus();
+    return false;
+  }
+  return true;
+}
+</script>
+
+</body>
+</html>
