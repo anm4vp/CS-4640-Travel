@@ -87,6 +87,16 @@ input[type=submit] {
   cursor: pointer;
 }
 
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
 .signup label  {
   display: inline;
   width:180px;
@@ -96,28 +106,29 @@ input[type=submit] {
   color: #191919;
 }
 
-.signup input[type=text], select {
-  width: 15%;
+.signup input[type=text]{
+  width: 100%;
   padding: 12px 20px;
-  margin: 6px 0;
+  margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
 }
 
-.signup input[type=password]{
-  width: 15%;
+.signup input[type=password] {
+  width: 40%;
   padding: 12px 20px;
-  margin: 6px 0;
+  margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
 }
+
 
 .signup input[type=submit] {
-  width: 10%;
+  width: 50%;
   background-color: #4CAF50;
   color: white;
   padding: 14px 20px;
@@ -126,6 +137,7 @@ input[type=submit] {
   border-radius: 4px;
   cursor: pointer;
 }
+
 
 input[type="text"]:invalid,
 input[type="password"]:invalid,
@@ -155,60 +167,52 @@ textarea:invalid {
   opacity: 1.0;
 }
 /*Modal*/
-
 .modal {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: rgb(0, 0, 0);
-  background: rgba(0, 0, 0, .5);
-  z-index: 1;
-  opacity:1;
-  -webkit-transition: opacity 400ms ease-in;
-  -moz-transition: opacity 400ms ease-in;
-  transition: opacity 400ms ease-in;
-  pointer-events: auto;
-}
-.modal:target {
-  opacity:0;
-  pointer-events: none;
-}
-.modal > div {
-  width: 400px;
-  position: relative;
-  margin: 10% auto;
-  padding: 5px 20px 13px 20px;
-  border-radius:10px;
-  color: #FFFFFF;
-  background: #595959;
-  background: -moz-linear-gradient(#1919, #999);
-  background: -webkit-linear-gradient(#1919, #999);
-  background: -o-linear-gradient(#1919, #999);
-}
-.close {
-  background: #606061;
-  color: #FFFFFF;
-  line-height: 25px;
-  position: absolute;
-  right: -12px;
-  text-align: center;
-  top: -10px;
-  width: 24px;
-  text-decoration: none;
-  font-weight: bold;
-  -webkit-border-radius: 12px;
-  -moz-border-radius: 12px;
-  border-radius: 12px;
-  -moz-box-shadow: 1px 1px 3px #000;
-  -webkit-box-shadow: 1px 1px 3px #000;
-  box-shadow: 1px 1px 3px #000;
-}
-.close:hover {
-  background: #00d9ff;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.5);
+    padding-top: 60px;
+    opacity: 1;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
 }
 
+.modal-content {
+    margin: 10% auto 15% auto;
+    border: 1px solid #27272F;
+    width: 30%;
+    height: 30%;
+    padding: 5px 20px 13px 20px;
+    background:rgba(39, 39, 47, 0.65);
+}
+
+.close {
+    position: sticky;
+    left: 67%;
+    top: 20%;
+    color: #000;
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 25px;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
 
 /* Icon */
 
@@ -257,11 +261,33 @@ a.icon.alt:active:before {
   background-color: #37a6cb;
 }
 
+/* Search */
+.search input[type=text] {
+    width: 130px;
+    height: 10px;
+    font-size: 15px; 
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+.search input[type=text]:focus {
+    width: 85%;
+}
+
 /* Footer */
 footer{
   background-color: #3FBF7F;
   padding: 30px;
+
 }
+/*.footer main {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+}*/
+
 #footer .copyright {
   font-size: 0.8em;
   list-style: none;

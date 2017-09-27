@@ -6,52 +6,62 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <link rel="stylesheet" href="assets/css/main.css" />
+  <script>
+function setFocus()
+{
+  document.forms[0].elements[0].focus();
+}
+
+</script>
 </head>
 
-<body>
+<body onload="setFocus()">
 
   <!--  Header  -->
   <nav class="nav">
     <ul>
       <li><a class="active" href="#home">Travel Website</a></li>
-      <li><a class="active" href="index.html#Map">Back To Map</a></li>
+      <li><a class="active" href="index.html">Back To Map</a></li>
 
-
-      <li style="float:right"><a href="signup.html" class="icon fa-users"> </a></li>
-      <li style="float:right"><a class="icon fa-search"> Search</a></li>
+      <li style="float:right"><a href="#" class="icon fa-user-circle"> Login</a></li>
     </ul>
   </nav>
 
+
   <!-- Sign Up -->
-  <center>
-    <h1> Sign Up </h1>
+    <center><h1> Sign Up </h1></center>
+    <div class="container">
     <div class="signup">
-      <form method="POST" name="signup" action="#" onsubmit="return formValidation();">
+      <form method="POST" name="signup" action="#">
         <label for="username">Username:</label>
-        <input type="text" id="username" name="username">
-        <br>
-        <labelfor="pw">Password:</label>
-        <input type="password" name="password" pattern=".{6,}" title="Six or more characters">
-        <br>
-        <label for="pw">Confirm Password:</label>
-        <input type="password" name="Password2" pattern=".{6,}" title="Six or more characters">
-        <br>
+        <input type="text" id="username" name="username" placeholder="Enter Username" required>
+
+        <label for="pw">Password:</label>
+        <input type="password" id="pw"name="pw" pattern=".{6,}" title="Six or more characters" placeholder="Enter Password" required>
+
+        <label for="pw">Repeat Password:</label>
+        <input type="password" id="pw2"name="pw2" pattern=".{6,}" title="Six or more characters" placeholder="Repeat Password" required>
+
         <label for="First">First Name:</label>
-        <input type="text" id="First"name="FirstName">
-        <br>
+        <input type="text" id="First"name="FirstName" pattern="^[A-Za-z]+$" title="First name not valid" placeholder="Enter First Name"required>
+
         <label for="Last">Last Name:</label>
-        <input type="text" id="Last" name = "LastName">
-        <br>
+        <input type="text" id="Last" name = "LastName" pattern="^[A-Za-z]+$" title="Last name not valid"placeholder="Enter Last Name" required>
+
         <label for="Email">E-mail:</label>
-        <input type="text" name="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
-        <br>
-        <input type="submit" value="Create Account">
-      </br>
+        <input type="text" name="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Enter E-mail Address" required>
+
+        <input type="checkbox" checked="checked"> Remember me
+        <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+        <center><input onclick="formValidation()" type="submit" value="Create Account"></center>
     </form>
   </div>
-</center>
+</div>
+
+</br></br>
 
 <!--  Footer -->
 <footer id="footer">
@@ -66,8 +76,6 @@
     <a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a>
     <a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a>
     <a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a>
-
-
     <ul class="copyright">
       <li>&copy; Travel</li>
     </ul>
@@ -79,75 +87,10 @@
 <!-- Form Validation-->
 <script type="text/javascript">
 function formValidation(){
-  var user = document.signup.username;
-  var firstnname = document.signup.FirstName;
-  var lastname = document.signup.LastName;
-  var email = document.signup.Email;
-  var pw = document.signup.password;
-  var pw2 = document.signup.Password2;
-  if(!userVal(user) || !pass(pw) || !pass2(pw2) || !pwVal(pw, pw2) || !nameVal(firstnname, lastname) || ! emailVal(email)){
-    return false;
-  }
-  return true;
+  var pw = document.signup.pw;
+  var pw2 = document.signup.pw2;
 
-}
-
-function userVal(user){
-  if(user.value.length == 0){
-    alert("Username field is empty");
-    user.focus();
-    return false;
-  }
-  return true;
-}
-
-function pass(pw) {
-  if(pw.value.length == 0){
-    alert("Password field is empty");
-    pw.focus();
-    return false;
-  }
-  return true;
-}
-
-function pass2(pw2) {
-  if(pw2.value.length == 0){
-    alert("Confirm Password field is empty");
-    pw2.focus();
-    return false;
-  }
-  return true;
-}
-
-function nameVal(firstnname, lastname){
-  var allLetters = /^[A-Za-z]+$/;
-  if(!firstnname.value.match(allLetters)){
-    alert("First name not valid");
-    firstnname.focus();
-    return false;
-  }
-  if(!lastname.value.match(allLetters)){
-    alert("Last name not valid");
-    lastname.focus();
-    return false;
-  }
-  return true;
-}
-
-function emailVal(email){
-  var emailcheck = /^([A-Za-z0-9._-])+@([a-z])+\.([a-z.])+$/;
-  if(!email.value.match(emailcheck)){
-    alert("Email is invalid");
-    email.focus();
-    return false;
-  }
-  return true;
-}
-
-function pwVal(pw){
-  if(pw.value.length == 0){
-    alert("Username field is empty");
-    user.focus();
+  if(!pwVal(pw, pw2)){
     return false;
   }
   return true;

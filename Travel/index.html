@@ -8,18 +8,29 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <link rel="stylesheet" href="assets/css/main.css" />
+  <script>
+  function setFocus()
+  {
+    document.forms[0].elements[0].focus();
+  }
+  </script>
 </head>
 
-<body>
+<body onload="setFocus()">
   <!-- Header -->
   <nav class="nav">
     <ul>
       <li><a class="active" href="#home">Travel Website</a></li>
       <li style="float:right"><a href="signup.html" class="icon fa-users"> </a></li>
-      <li style="float:right"><a class="icon fa-search"> Search</a></li>
+      <div class="search">
+        <li style="float:right">
+          <span class="fa fa-search"></span>
+          <input type="text" placeholder="Search...">
+        </li>
+      </div>
     </ul>
   </nav>
-  
+
   <center><h1> Select a Region You Would Like to Visit </h1></center>
 
   <!-- Map Image-->
@@ -27,17 +38,18 @@
 
   <!-- Modal -->
   <div id="Map" class="modal">
-    <div>	<a href="#Map" title="Close" class="close">X</a>
-
-      <center>
-        <h2>Welcome to Travel Website</h2>
-        <form method="POST" name="tripname" action="#Map" onsubmit="return formValidation();">
-
-          <input type="text" name="trip" placeholder="Name Your Trip" /></h2>
-          <input href="#Map" type="submit" value="Start Your Journey">
-        </form>
-      </center>
-    </div>
+    <span onclick="document.getElementById('Map').style.display='none'" class="close" title="Close Modal">×</span>
+    <form method="post" name="start" class="modal-content animate" action="#">
+      <div class="container">
+        <center>
+          <h2><font color="white">Welcome to Travel Website</font></h2>
+          <form method="POST" name="tripname" action="#Map">
+            <input type="text" id="trip" name="trip" placeholder="Name Your Trip" required></h2>
+            <input onclick="document.getElementById('Map').style.display='none'" type="submit" value="Start Your Journey">
+          </form>
+        </center>
+      </div>
+    </form>
   </div>
 
   <!-- Footer  -->
@@ -60,15 +72,17 @@
   </footer>
 
   <!-- Script -->
-  <!-- Form Validation -->
   <script>
-  function formValidation() {
-    var x = document.forms["tripname"]["trip"].value;
-    if (x == "") {
-      alert("Name must be filled out");
-      return false;
+  // Get the modal
+  var modal = document.getElementById('Map');
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
     }
   }
   </script>
+
 </body>
 </html>
