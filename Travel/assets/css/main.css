@@ -297,6 +297,11 @@ a.icon.alt:active:before {
   transform: scale(1.1, 1.1);
 }
 
+.box:focus{
+  outline: none;
+  border: 2px solid rgba(237, 120, 106, 1);
+}
+
 .box-text {
   font-family: Georgia, serif;
   font-size: 18px;
@@ -338,7 +343,7 @@ a.icon.alt:active:before {
 }
 
 /* On mouse-over, add shadow */
-.card:hover {
+.card:hover{
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
@@ -353,7 +358,7 @@ footer{
   background-color: #3FBF7F;
   padding: 30px;
   position: relative;
-  margin-top: -180px; /* negative value of footer height */
+  margin-top: -10px; /* negative value of footer height */
   clear: both;
   bottom: 0;
 }
