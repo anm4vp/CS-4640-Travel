@@ -265,7 +265,7 @@ a.icon.alt:active:before {
 .search input[type=text] {
     width: 130px;
     height: 10px;
-    font-size: 15px; 
+    font-size: 15px;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
 }
@@ -274,11 +274,88 @@ a.icon.alt:active:before {
     width: 85%;
 }
 
+/* Body */
+.section-buttons {
+  padding-bottom: 130px;
+  background-color: #9cacbd;
+}
+
+.box {
+    display: inline-block;
+    position: relative;
+    margin: 1%;
+    float: left;
+    width: 23%;
+    height: 100px;
+    background-color: #fff;
+}
+
+.box:hover {
+  -ms-transform: scale(1.1, 1.1); /* IE 9 */
+  -webkit-transform: scale(1.1, 1.1); /* Safari */
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  transform: scale(1.1, 1.1);
+}
+
+.box-text {
+  font-family: Georgia, serif;
+  font-size: 18px;
+  font-weight: normal;
+  letter-spacing: 1.2px;
+  color: #285f43;
+  text-align: center;
+  padding: 30px;
+  margin: 0;
+  position: absolute;
+}
+
+.filter-box {
+    display: inline-block;
+    position: relative;
+    margin: 1%;
+    float: left;
+    width: 250px;
+    height: 1000px;
+    background-color: aliceblue;
+}
+
+.filter-text {
+  font-family: Georgia, serif;
+  font-size: 18px;
+  font-weight: normal;
+  letter-spacing: 1.2px;
+  color: #285f43;
+  text-align: center;
+  padding-top: 30px;
+  margin: 0;
+}
+
+.card {
+    transition: 0.3s;
+    background-color: aliceblue;
+    padding: inherit;
+    margin: 10px;
+}
+
+/* On mouse-over, add shadow */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding  */
+.container {
+    padding: 16px 16px;
+}
+
+
 /* Footer */
 footer{
   background-color: #3FBF7F;
   padding: 30px;
-
+  position: relative;
+  margin-top: -180px; /* negative value of footer height */
+  clear: both;
+  bottom: 0;
 }
 /*.footer main {
   position: absolute;
