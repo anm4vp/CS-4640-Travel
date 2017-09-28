@@ -393,3 +393,7 @@ footer{
 #footer p.right {
   float: right;
 }
+
+td {
+  padding-right: 10px !important;
+}
