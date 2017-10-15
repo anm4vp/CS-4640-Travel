@@ -1,22 +1,46 @@
+<?php session_start(); ?>
+
 <!DOCTYPE HTML>
 
 <html>
 <head>
-  <title>Travel</title>
+  <title>Map</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 
 <body>
+
+  <?php
+
+  alert("Congrats you have successfully signed up");
+
+  function alert($msg){
+
+    echo "<script type='text/javascript'>alert('$msg')</script>";
+  }
+  ?>
+
   <!-- Header -->
   <nav class="nav">
     <ul>
-      <li><a class="active" href="index.html">Travel Website</a></li>
-      <li style="float:right"><a href="#" class="icon fa-user-circle"> Login</a></li>
-      <li style="float:right"><a href="signup.html" class="icon fa-users"> Sign Up</a></li>
+      <li><a class="active" href="index.php">Travel Website</a></li>
+      <li>
+        <?php
+        if (isset($_SESSION['username']))
+          {
+             $username = $_SESSION['username'];
+             echo "<p>Welcome $username ! </p> <hr />";
+          }
+          else
+            echo '<p>Session not Working</p>';
+       ?>
+     </li>
+      <li style="float:right"><a href="#" class="icon fa-user-circle"> Logout</a></li>
       <div class="search">
         <li style="float:right">
           <span class="fa fa-search"></span>
@@ -29,7 +53,7 @@
   <center><h1> Select a Region You Would Like to Visit </h1></center>
 
   <!-- Map Image-->
-  <a href="discover.html"><img src="images/world_map.png" width=100% height=100%></img></a>
+  <a href="discover.php"><img src="images/world_map.png" width=100% height=100%></img></a>
 
 
 
@@ -65,5 +89,5 @@
   </footer>
 
 
-</body>
-</html>
+  </body>
+  </html>

@@ -8,20 +8,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <link rel="stylesheet" href="assets/css/main.css" />
-
-  <script>
-  function setFocus()
-  {
-    document.forms[0].elements[0].focus();
-  }
-  </script>
 </head>
 
-<body onload="setFocus()">
+<body>
   <!-- Header -->
   <nav class="nav">
     <ul>
-      <li><a class="active" href="#home">Travel Website</a></li>
+      <li><a class="active" href="index.php">Travel Website</a></li>
       <li style="float:right"><a href="#" class="icon fa-user-circle"> Login</a></li>
       <li style="float:right"><a href="signup.html" class="icon fa-users"> Sign Up</a></li>
       <div class="search">
@@ -36,23 +29,9 @@
   <center><h1> Select a Region You Would Like to Visit </h1></center>
 
   <!-- Map Image-->
-  <a href="discover.html"><img src="images/world_map.png" width=100% height=100%></img></a>
+  <a href="discover.php"><img src="images/world_map.png" width=100% height=100%></img></a>
 
-  <!-- Modal -->
-  <div id="Map" class="modal">
-    <span onclick="document.getElementById('Map').style.display='none'" class="close" title="Close Modal">×</span>
-    <form method="post" name="start" class="modal-content animate" action="map.html">
-      <div class="container">
-        <center>
-          <h2><font color="white">Welcome to Travel Website</font></h2>
-          <form method="POST" name="tripname" action="#Map">
-            <input type="text" id="trip"onclick="document.getElementById('Map').style.display='none'"  name="trip" placeholder="Name Your Trip" required></h2>
-            <input type="submit" value="Start Your Journey">
-          </form>
-        </center>
-      </div>
-    </form>
-  </div>
+
 
   <!-- Footer  -->
   <footer id="footer">
@@ -85,16 +64,6 @@
     </center>
   </footer>
 
-  <!-- Script -->
-  <script>
-  var modal = document.getElementById('Map');
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  }
-  </script>
 
 </body>
 </html>

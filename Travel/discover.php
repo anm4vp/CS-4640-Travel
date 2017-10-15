@@ -15,8 +15,8 @@
   <!-- Header -->
   <nav class="nav">
     <ul>
-      <li><a class="active" href="index.html">Travel Website</a></li>
-      <li><a class="active" href="map.html">Back To Map</a></li>
+      <li><a class="active" href="index.php">Travel Website</a></li>
+      <li><a class="active" href="map.php">Back To Map</a></li>
 
       <li style="float:right"><a href="#" class="icon fa-user-circle"> Login</a></li>
       <li style="float:right"><a href="signup.html" class="icon fa-users"> Sign Up</a></li>
