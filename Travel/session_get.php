@@ -34,7 +34,7 @@
         if (isset($_SESSION['username']))
           {
              $username = $_SESSION['username'];
-             echo "<p>Welcome $username ! </p> <hr />";
+             echo "<p>Welcome $username ! </p>";
           }
           else
             echo '<p>Session not Working</p>';

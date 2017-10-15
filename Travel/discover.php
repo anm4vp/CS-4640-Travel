@@ -44,39 +44,139 @@
     </div>
     <div class="container content">
       <div class="col-xs-2 filter-box">
-        <h3 class="filter-text">Filter</h3>
+        <h2 class="filter-text">Filter</h2>
+        <hr>
+        <h4 class="filter-text">Maximum Price</h4><br>
+        <form method='post' id='priceform' action="">
+          <input type='checkbox' name='maxprice[]' value='500' id="filter"> $500<br>
+          <input type='checkbox' name='maxprice[]' value='1000' id="filter"> $1000<br>
+          <input type='checkbox' name='maxprice[]' value='2000' id="filter"> $2000<br>
+          <input type='checkbox' name='maxprice[]' value='3000' id="filter"> $3000<br>
+          <input type='checkbox' name='maxprice[]' value='4000' id="filter"> $4000<br>
+          <input type='checkbox' name='maxprice[]' value='5000' id="filter"> $5000<br>
+          <input type='checkbox' name='maxprice[]' value='6000' id="filter"> $6000<br>
+          <input type="submit" name="submit" value="submit">
+        </form>
+        <script>
+        $('input[type="checkbox"]').on('change', function() {
+           $(this).siblings('input[type="checkbox"]').prop('checked', false);
+        });
+        </script>
+        <?php
+          if(isset($_POST['submit'])){
+            $maxprice = $_POST['maxprice'];
+            foreach ($maxprice as $value)
+            {
+                $_SESSION['maxprice'] = $value;
+            }
+          }
+         ?>
         <hr>
       </div>
-      <div class="col-xs-9 card" onclick="alertChosen()">
-        <div class="container">
-          <h4><b>Hawaii - United States</b></h4>
-          <p>Visit the volcanic islands, surf the great swells, and enjoy the local customs.</p>
-        </div>
-      </div>
-      <div class="col-xs-9 card" onclick="alertChosen()">
-        <div class="container">
-          <h4><b>The Grand Canyon - Arizona, United States </b></h4>
-          <p>Raft the spectacular river, hike along the South Rim, and enjoy this natural wonder.</p>
-        </div>
-      </div>
-      <div class="col-xs-9 card" onclick="alertChosen()">
-        <div class="container">
-          <h4><b>Machu Pichu, Peru</b></h4>
-          <p>Visit the miraculous ruins of the Inca Empire.</p>
-        </div>
-      </div>
-      <div class="col-xs-9 card" onclick="alertChosen()">
-        <div class="container">
-          <h4><b>Pyramids of Giza, Giza, Egypt</b></h4>
-          <p>One of the Seven Wonders of the World, visit these monuments to the ancient world. </p>
-        </div>
-      </div>
-      <div class="col-xs-9 card" onclick="alertChosen()">
+      <div>
+        <?php
+        if (isset($_SESSION['maxprice']))
+          {
+           $maxprice = $_SESSION['maxprice'];
+           echo "<p>Filters: Maximum Price: $maxprice</p>";
+         }
+         ?>
+     </div>
+      <?php
+        $divStyle=''; // show div
+        $price = 2000;
+        if (isset($_SESSION['maxprice']))
+          {
+          $maxprice = $_SESSION['maxprice'];
+          if($price > $maxprice){
+            $divStyle='style="display:none;"'; //hide div
+          }
+        }
+        print'
+        <div '.$divStyle.' class="col-xs-9 card" onclick="alertChosen()">
+          <div class="container">
+            <h4><b>Hawaii - United States</b></h4>
+            <p>Price: $'.$price.'</p>
+            <p>Visit the volcanic islands, surf the great swells, and enjoy the local customs.</p>
+          </div>
+        </div>';
+      ?>
+      <?php
+        $divStyle=''; // show div
+        $price = 400;
+        if (isset($_SESSION['maxprice']))
+          {
+          $maxprice = $_SESSION['maxprice'];
+          if($price > $maxprice){
+            $divStyle='style="display:none;"'; //hide div
+          }
+        }
+        print'
+        <div '.$divStyle.' class="col-xs-9 card" onclick="alertChosen()">
+          <div class="container">
+            <h4><b>The Grand Canyon - Arizona, United States </b></h4>
+            <p>Price: $'.$price.'</p>
+            <p>Raft the spectacular river, hike along the South Rim, and enjoy this natural wonder.</p>
+          </div>
+        </div>';
+        ?>
+        <?php
+          $divStyle=''; // show div
+          $price = 1500;
+          if (isset($_SESSION['maxprice']))
+            {
+            $maxprice = $_SESSION['maxprice'];
+            if($price > $maxprice){
+              $divStyle='style="display:none;"'; //hide div
+            }
+          }
+          print'
+          <div '.$divStyle.' class="col-xs-9 card" onclick="alertChosen()">
+            <div class="container">
+              <h4><b>Machu Pichu, Peru</b></h4>
+              <p>Price: $'.$price.'</p>
+              <p>Visit the miraculous ruins of the Inca Empire.</p>
+            </div>
+          </div>';
+        ?>
+      <?php
+        $divStyle=''; // show div
+        $price = 5000;
+        if (isset($_SESSION['maxprice']))
+          {
+          $maxprice = $_SESSION['maxprice'];
+          if($price > $maxprice){
+            $divStyle='style="display:none;"'; //hide div
+          }
+        }
+        print'
+          <div '.$divStyle.' class="col-xs-9 card" onclick="alertChosen()">
+            <div class="container">
+              <h4><b>Pyramids of Giza, Giza, Egypt</b></h4>
+              <p>Price: $'.$price.'</p>
+              <p>One of the Seven Wonders of the World, visit these monuments to the ancient world. </p>
+            </div>
+          </div>';
+      ?>
+      <?php
+        $divStyle=''; // show div
+        $price = 4000;
+        if (isset($_SESSION['maxprice']))
+          {
+          $maxprice = $_SESSION['maxprice'];
+          if($price > $maxprice){
+            $divStyle='style="display:none;"'; //hide div
+          }
+        }
+        print'
+      <div '.$divStyle.' class="col-xs-9 card" onclick="alertChosen()">
         <div class="container">
           <h4><b>The Eiffel Tower, Paris, France</b></h4>
+          <p>Price: $'.$price.'</p>
           <p>See the most famous structure in Paris as it twinkles at night.</p>
         </div>
-      </div>
+      </div>';
+      ?>
   </div>
 
   <!-- Footer  -->
