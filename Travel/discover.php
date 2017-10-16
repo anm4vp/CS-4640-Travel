@@ -25,10 +25,8 @@
         if (isset($_SESSION['username']))
           {
              $username = $_SESSION['username'];
-             echo "Welcome $username !";
+             print '<div class="welcome-text">Welcome '.$username.' !</div>';
           }
-          else
-            echo '<p>Session not Working</p>';
        ?>
      </li>
       <li style="float:right"><a href="#" class="icon fa-user-circle"> Login</a></li>
@@ -68,7 +66,8 @@
           <input type='checkbox' name='maxprice[]' value='4000'><span class="filter"> $4000</span><br>
           <input type='checkbox' name='maxprice[]' value='5000'><span class="filter"> $5000</span><br>
           <input type='checkbox' name='maxprice[]' value='6000'><span class="filter"> $6000</span><br>
-          <input type="submit" name="submit" value="submit">
+          <input type='checkbox' name='maxprice[]' value='1000000000000'><span class="filter"> All</span><br>
+          <input type="submit" name="submit" value="apply">
         </form>
 
         <!-- Make sure only one box is checked at a time -->
@@ -93,7 +92,7 @@
          ?>
         <hr>
       </div>
-      <div style="padding: inherit" class="col-xs-9">
+      <div class="col-xs-9">
         <?php
         if (isset($_SESSION['maxprice']))
           {
@@ -102,47 +101,10 @@
          }
          ?>
      </div>
-      <?php
-        $divStyle=''; // show div
-        $price = 2000;
-        if (isset($_SESSION['maxprice']))
-          {
-          $maxprice = $_SESSION['maxprice'];
-          if($price > $maxprice){
-            $divStyle='style="display:none;"'; //hide div
-          }
-        }
-        print'
-        <div '.$divStyle.' class="col-xs-9 card" onclick="alertChosen()">
-          <div class="container">
-            <h4><b>Hawaii - United States</b></h4>
-            <p>Price: $'.$price.'</p>
-            <p>Visit the volcanic islands, surf the great swells, and enjoy the local customs.</p>
-          </div>
-        </div>';
-      ?>
-      <?php
-        $divStyle=''; // show div
-        $price = 400;
-        if (isset($_SESSION['maxprice']))
-          {
-          $maxprice = $_SESSION['maxprice'];
-          if($price > $maxprice){
-            $divStyle='style="display:none;"'; //hide div
-          }
-        }
-        print'
-        <div '.$divStyle.' class="col-xs-9 card" onclick="alertChosen()">
-          <div class="container">
-            <h4><b>The Grand Canyon - Arizona, United States </b></h4>
-            <p>Price: $'.$price.'</p>
-            <p>Raft the spectacular river, hike along the South Rim, and enjoy this natural wonder.</p>
-          </div>
-        </div>';
-        ?>
+     <div class="col-xs-9">
         <?php
           $divStyle=''; // show div
-          $price = 1500;
+          $price = 2000;
           if (isset($_SESSION['maxprice']))
             {
             $maxprice = $_SESSION['maxprice'];
@@ -151,52 +113,91 @@
             }
           }
           print'
-          <div '.$divStyle.' class="col-xs-9 card" onclick="alertChosen()">
+          <div '.$divStyle.' class="card" onclick="alertChosen()">
             <div class="container">
-              <h4><b>Machu Pichu, Peru</b></h4>
+              <h4><b>Hawaii - United States</b></h4>
               <p>Price: $'.$price.'</p>
-              <p>Visit the miraculous ruins of the Inca Empire.</p>
+              <p>Visit the volcanic islands, surf the great swells, and enjoy the local customs.</p>
             </div>
           </div>';
         ?>
-      <?php
-        $divStyle=''; // show div
-        $price = 5000;
-        if (isset($_SESSION['maxprice']))
-          {
-          $maxprice = $_SESSION['maxprice'];
-          if($price > $maxprice){
-            $divStyle='style="display:none;"'; //hide div
+        <?php
+          $divStyle=''; // show div
+          $price = 400;
+          if (isset($_SESSION['maxprice']))
+            {
+            $maxprice = $_SESSION['maxprice'];
+            if($price > $maxprice){
+              $divStyle='style="display:none;"'; //hide div
+            }
           }
-        }
-        print'
-          <div '.$divStyle.' class="col-xs-9 card" onclick="alertChosen()">
+          print'
+          <div '.$divStyle.' class="card" onclick="alertChosen()">
             <div class="container">
-              <h4><b>Pyramids of Giza, Giza, Egypt</b></h4>
+              <h4><b>The Grand Canyon - Arizona, United States </b></h4>
               <p>Price: $'.$price.'</p>
-              <p>One of the Seven Wonders of the World, visit these monuments to the ancient world. </p>
+              <p>Raft the spectacular river, hike along the South Rim, and enjoy this natural wonder.</p>
             </div>
           </div>';
-      ?>
-      <?php
-        $divStyle=''; // show div
-        $price = 4000;
-        if (isset($_SESSION['maxprice']))
-          {
-          $maxprice = $_SESSION['maxprice'];
-          if($price > $maxprice){
-            $divStyle='style="display:none;"'; //hide div
+          ?>
+          <?php
+            $divStyle=''; // show div
+            $price = 1500;
+            if (isset($_SESSION['maxprice']))
+              {
+              $maxprice = $_SESSION['maxprice'];
+              if($price > $maxprice){
+                $divStyle='style="display:none;"'; //hide div
+              }
+            }
+            print'
+            <div '.$divStyle.' class="card" onclick="alertChosen()">
+              <div class="container">
+                <h4><b>Machu Pichu, Peru</b></h4>
+                <p>Price: $'.$price.'</p>
+                <p>Visit the miraculous ruins of the Inca Empire.</p>
+              </div>
+            </div>';
+          ?>
+        <?php
+          $divStyle=''; // show div
+          $price = 5000;
+          if (isset($_SESSION['maxprice']))
+            {
+            $maxprice = $_SESSION['maxprice'];
+            if($price > $maxprice){
+              $divStyle='style="display:none;"'; //hide div
+            }
           }
-        }
-        print'
-      <div '.$divStyle.' class="col-xs-9 card" onclick="alertChosen()">
-        <div class="container">
-          <h4><b>The Eiffel Tower, Paris, France</b></h4>
-          <p>Price: $'.$price.'</p>
-          <p>See the most famous structure in Paris as it twinkles at night.</p>
-        </div>
-      </div>';
-      ?>
+          print'
+            <div '.$divStyle.' class="card" onclick="alertChosen()">
+              <div class="container">
+                <h4><b>Pyramids of Giza, Giza, Egypt</b></h4>
+                <p>Price: $'.$price.'</p>
+                <p>One of the Seven Wonders of the World, visit these monuments to the ancient world. </p>
+              </div>
+            </div>';
+        ?>
+        <?php
+          $divStyle=''; // show div
+          $price = 4000;
+          if (isset($_SESSION['maxprice']))
+            {
+            $maxprice = $_SESSION['maxprice'];
+            if($price > $maxprice){
+              $divStyle='style="display:none;"'; //hide div
+            }
+          }
+          print'
+        <div '.$divStyle.' class="card" onclick="alertChosen()">
+          <div class="container">
+            <h4><b>The Eiffel Tower, Paris, France</b></h4>
+            <p>Price: $'.$price.'</p>
+            <p>See the most famous structure in Paris as it twinkles at night.</p>
+          </div>
+        </div>';
+        ?>
+      </div>
   </div>
 
   <!-- Footer  -->

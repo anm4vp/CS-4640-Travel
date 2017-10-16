@@ -1,6 +1,5 @@
 h1, h2, h3, h4, h5, h6 {
   color: #191919;
-  font-family: 'Bree Serif', serif;
   font-weight: 600;
   line-height: 1.65;
   margin: 0 0 1em 0;
@@ -8,7 +7,6 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   color: inherit;
-  font-family: 'Bree Serif', serif;
   border-bottom: 0;
 }
 
@@ -44,13 +42,11 @@ h6 {
   padding: 0;
   overflow: hidden;
   background-color: #243A50;
-  font-family: 'Bree Serif', serif;
 
 }
 
 .nav li {
   float: left;
-  font-family: 'Bree Serif', serif;
 
 }
 
@@ -60,7 +56,6 @@ h6 {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-family: 'Bree Serif', serif;
 
 }
 
@@ -82,7 +77,6 @@ input[type=text], select {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  font-family: 'Bree Serif', serif;
 
 }
 
@@ -114,7 +108,6 @@ button {
   text-align:right;
   padding-right:10px;
   color: #191919;
-  font-family: 'Bree Serif', serif;
 
 }
 
@@ -126,7 +119,6 @@ button {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  font-family: 'Bree Serif', serif;
 
 }
 
@@ -138,7 +130,6 @@ button {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  font-family: 'Bree Serif', serif;
 
 }
 
@@ -177,7 +168,6 @@ textarea:invalid {
 ::-webkit-input-placeholder {
   color: rgb(49, 88, 127)!important;
   text-align: center;
-  font-family: 'Bree Serif', serif;
   opacity: 1.0;
 }
 
@@ -185,12 +175,10 @@ textarea:invalid {
   color: rgb(49, 88, 127)!important;
   text-align: center;
   opacity: 1.0;
-  font-family: 'Bree Serif', serif;
 
 }
 /*Modal*/
 .modal {
-  font-family: 'Bree Serif', serif;
     position: fixed;
     top: 0;
     right: 0;
@@ -212,7 +200,6 @@ textarea:invalid {
 }
 
 .modal-content {
-  font-family: 'Bree Serif', serif;
     margin: 10% auto 15% auto;
     border: 1px solid #27272F;
     width: 30%;
@@ -286,7 +273,6 @@ a.icon.alt:active:before {
 
 /* Search */
 .search input[type=text] {
-  font-family: 'Bree Serif', serif;
     width: 130px;
     height: 10px;
     font-size: 15px;
@@ -301,7 +287,7 @@ a.icon.alt:active:before {
 /* Body */
 .section-buttons {
   padding-bottom: 130px;
-  background-color: #9cacbd;
+  background-color: #ffd600;
 }
 
 .box {
@@ -311,7 +297,7 @@ a.icon.alt:active:before {
     float: left;
     width: 23%;
     height: 100px;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.55);
 }
 
 .box:hover {
@@ -327,11 +313,10 @@ a.icon.alt:active:before {
 }
 
 .box-text {
-  font-family: 'Bree Serif', serif;
   font-size: 18px;
   font-weight: normal;
   letter-spacing: 1.2px;
-  color: #285f43;
+  color: #253a50;
   text-align: center;
   padding: 30px;
   margin: 0;
@@ -344,12 +329,11 @@ a.icon.alt:active:before {
     margin: 1%;
     float: left;
     width: 250px;
-    height: 800px;
-    background-color: aliceblue;
+    height: inherit;
+    background-color: #d5eaff;
 }
 
 .filter-text {
-  font-family: 'Bree Serif', serif;
   font-size: 18px;
   font-weight: bold;
   letter-spacing: 1.2px;
@@ -360,7 +344,6 @@ a.icon.alt:active:before {
 }
 
 .filter-text-sub {
-  font-family: 'Bree Serif', serif;
   font-size: 16px;
   font-weight: normal;
   letter-spacing: 1.2px;
@@ -371,7 +354,6 @@ a.icon.alt:active:before {
 }
 
 .filter{
-  font-family: 'Bree Serif', serif;
   font-size: 15px;
   font-weight: bold;
   letter-spacing: 1px;
@@ -380,7 +362,7 @@ a.icon.alt:active:before {
 
 .card {
     transition: 0.3s;
-    background-color: aliceblue;
+    background-color: #d5eaff;
     padding: inherit;
     margin: 10px;
 }
@@ -393,6 +375,10 @@ a.icon.alt:active:before {
 /* Add some padding  */
 .container {
     padding: 16px 16px;
+}
+
+.welcome-text {
+  color: white;
 }
 
 #priceform {

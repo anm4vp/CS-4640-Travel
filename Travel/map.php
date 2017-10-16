@@ -23,10 +23,8 @@
         if (isset($_SESSION['username']))
           {
              $username = $_SESSION['username'];
-             echo "<p>Welcome $username ! </p>";
+             print '<div class="welcome-text">Welcome '.$username.' !</div>';
           }
-          else
-            echo '<p>Session not Working</p>';
        ?>
      </li>
       <li style="float:right"><a href="#" class="icon fa-user-circle"> Login</a></li>
