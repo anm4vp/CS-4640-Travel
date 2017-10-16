@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE HTML>
 
 <html>
@@ -5,7 +7,7 @@
   <title>Travel</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <link rel="stylesheet" href="assets/css/main.css" />
@@ -16,6 +18,17 @@
   <nav class="nav">
     <ul>
       <li><a class="active" href="index.php">Travel Website</a></li>
+      <li>
+        <?php
+        if (isset($_SESSION['username']))
+          {
+             $username = $_SESSION['username'];
+             echo "<p>Welcome $username ! </p>";
+          }
+          else
+            echo '<p>Session not Working</p>';
+       ?>
+     </li>
       <li style="float:right"><a href="#" class="icon fa-user-circle"> Login</a></li>
       <li style="float:right"><a href="signup.php" class="icon fa-users"> Sign Up</a></li>
       <div class="search">

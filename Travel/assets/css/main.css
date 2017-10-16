@@ -1,5 +1,6 @@
 h1, h2, h3, h4, h5, h6 {
   color: #191919;
+  font-family: 'Bree Serif', serif;
   font-weight: 600;
   line-height: 1.65;
   margin: 0 0 1em 0;
@@ -7,6 +8,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   color: inherit;
+  font-family: 'Bree Serif', serif;
   border-bottom: 0;
 }
 
@@ -42,10 +44,14 @@ h6 {
   padding: 0;
   overflow: hidden;
   background-color: #243A50;
+  font-family: 'Bree Serif', serif;
+
 }
 
 .nav li {
   float: left;
+  font-family: 'Bree Serif', serif;
+
 }
 
 .nav li a {
@@ -54,6 +60,8 @@ h6 {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  font-family: 'Bree Serif', serif;
+
 }
 
 .nav li a:hover {
@@ -74,6 +82,8 @@ input[type=text], select {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  font-family: 'Bree Serif', serif;
+
 }
 
 input[type=submit] {
@@ -104,6 +114,8 @@ button {
   text-align:right;
   padding-right:10px;
   color: #191919;
+  font-family: 'Bree Serif', serif;
+
 }
 
 .signup input[type=text]{
@@ -114,6 +126,8 @@ button {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  font-family: 'Bree Serif', serif;
+
 }
 
 .signup input[type=password] {
@@ -124,6 +138,8 @@ button {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  font-family: 'Bree Serif', serif;
+
 }
 
 
@@ -139,12 +155,15 @@ button {
 }
 
 
+/*
+????
+
 input[type="text"]:invalid,
 input[type="password"]:invalid,
 select:invalid,
 textarea:invalid {
   box-shadow: none;
-}
+}*/
 
 .signup input[type=text]:focus{
   outline: none;
@@ -158,6 +177,7 @@ textarea:invalid {
 ::-webkit-input-placeholder {
   color: rgb(49, 88, 127)!important;
   text-align: center;
+  font-family: 'Bree Serif', serif;
   opacity: 1.0;
 }
 
@@ -165,10 +185,12 @@ textarea:invalid {
   color: rgb(49, 88, 127)!important;
   text-align: center;
   opacity: 1.0;
+  font-family: 'Bree Serif', serif;
+
 }
 /*Modal*/
 .modal {
-
+  font-family: 'Bree Serif', serif;
     position: fixed;
     top: 0;
     right: 0;
@@ -190,6 +212,7 @@ textarea:invalid {
 }
 
 .modal-content {
+  font-family: 'Bree Serif', serif;
     margin: 10% auto 15% auto;
     border: 1px solid #27272F;
     width: 30%;
@@ -263,6 +286,7 @@ a.icon.alt:active:before {
 
 /* Search */
 .search input[type=text] {
+  font-family: 'Bree Serif', serif;
     width: 130px;
     height: 10px;
     font-size: 15px;
@@ -303,7 +327,7 @@ a.icon.alt:active:before {
 }
 
 .box-text {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Bree Serif', serif;
   font-size: 18px;
   font-weight: normal;
   letter-spacing: 1.2px;
@@ -325,7 +349,7 @@ a.icon.alt:active:before {
 }
 
 .filter-text {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Bree Serif', serif;
   font-size: 18px;
   font-weight: bold;
   letter-spacing: 1.2px;
@@ -336,7 +360,7 @@ a.icon.alt:active:before {
 }
 
 .filter-text-sub {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Bree Serif', serif;
   font-size: 16px;
   font-weight: normal;
   letter-spacing: 1.2px;
@@ -347,7 +371,7 @@ a.icon.alt:active:before {
 }
 
 .filter{
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Bree Serif', serif;
   font-size: 15px;
   font-weight: bold;
   letter-spacing: 1px;
@@ -371,6 +395,10 @@ a.icon.alt:active:before {
     padding: 16px 16px;
 }
 
+#priceform {
+  padding: inherit;
+}
+
 
 /* Footer */
 footer{
@@ -390,6 +418,7 @@ footer{
 }*/
 
 #footer .copyright {
+
   font-size: 0.8em;
   list-style: none;
   padding-left: 0;
