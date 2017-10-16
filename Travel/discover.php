@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE HTML>
 
 <html>
@@ -19,7 +21,7 @@
       <li><a class="active" href="map.php">Back To Map</a></li>
 
       <li style="float:right"><a href="#" class="icon fa-user-circle"> Login</a></li>
-      <li style="float:right"><a href="signup.html" class="icon fa-users"> Sign Up</a></li>
+      <li style="float:right"><a href="signup.php" class="icon fa-users"> Sign Up</a></li>
       <div class="search">
         <li style="float:right">
           <span class="fa fa-search"></span>
@@ -66,10 +68,15 @@
         </script>
         <?php
           if(isset($_POST['submit'])){
-            $maxprice = $_POST['maxprice'];
-            foreach ($maxprice as $value)
-            {
-                $_SESSION['maxprice'] = $value;
+            if(empty($_POST['maxprice'])){
+              echo "Did not properly select a maximum price, try again.";
+            }
+            else {
+              $maxprice = $_POST['maxprice'];
+              foreach ($maxprice as $value)
+              {
+                  $_SESSION['maxprice'] = $value;
+              }
             }
           }
          ?>
@@ -80,7 +87,7 @@
         if (isset($_SESSION['maxprice']))
           {
            $maxprice = $_SESSION['maxprice'];
-           echo "<p>Filters: Maximum Price: $maxprice</p>";
+           echo "<p>Filters: Maximum Price: $$maxprice</p>";
          }
          ?>
      </div>

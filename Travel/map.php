@@ -16,7 +16,7 @@
     <ul>
       <li><a class="active" href="index.php">Travel Website</a></li>
       <li style="float:right"><a href="#" class="icon fa-user-circle"> Login</a></li>
-      <li style="float:right"><a href="signup.html" class="icon fa-users"> Sign Up</a></li>
+      <li style="float:right"><a href="signup.php" class="icon fa-users"> Sign Up</a></li>
       <div class="search">
         <li style="float:right">
           <span class="fa fa-search"></span>
