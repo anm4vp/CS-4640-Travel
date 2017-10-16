@@ -303,7 +303,7 @@ a.icon.alt:active:before {
 }
 
 .box-text {
-  font-family: Georgia, serif;
+  font-family: 'Raleway', sans-serif;
   font-size: 18px;
   font-weight: normal;
   letter-spacing: 1.2px;
@@ -325,14 +325,33 @@ a.icon.alt:active:before {
 }
 
 .filter-text {
-  font-family: Georgia, serif;
+  font-family: 'Raleway', sans-serif;
   font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1.2px;
+  color: #285f43;
+  text-align: center;
+  padding-top: 30px;
+  margin: 0;
+}
+
+.filter-text-sub {
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
   font-weight: normal;
   letter-spacing: 1.2px;
   color: #285f43;
   text-align: center;
   padding-top: 30px;
   margin: 0;
+}
+
+.filter{
+  font-family: 'Raleway', sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-align: center;
 }
 
 .card {

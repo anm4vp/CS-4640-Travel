@@ -7,6 +7,7 @@
   <title>Travel</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <link rel="stylesheet" href="assets/css/main.css" />
@@ -48,15 +49,15 @@
       <div class="col-xs-2 filter-box">
         <h2 class="filter-text">Filter</h2>
         <hr>
-        <h4 class="filter-text">Maximum Price</h4><br>
+        <h4 class="filter-text-sub">Maximum Price</h4><br>
         <form method='post' id='priceform' action="">
-          <input type='checkbox' name='maxprice[]' value='500' id="filter"> $500<br>
-          <input type='checkbox' name='maxprice[]' value='1000' id="filter"> $1000<br>
-          <input type='checkbox' name='maxprice[]' value='2000' id="filter"> $2000<br>
-          <input type='checkbox' name='maxprice[]' value='3000' id="filter"> $3000<br>
-          <input type='checkbox' name='maxprice[]' value='4000' id="filter"> $4000<br>
-          <input type='checkbox' name='maxprice[]' value='5000' id="filter"> $5000<br>
-          <input type='checkbox' name='maxprice[]' value='6000' id="filter"> $6000<br>
+          <input type='checkbox' name='maxprice[]' value='500'><span class="filter"> $500</span><br>
+          <input type='checkbox' name='maxprice[]' value='1000'><span class="filter"> $1000</span><br>
+          <input type='checkbox' name='maxprice[]' value='2000'><span class="filter"> $2000</span><br>
+          <input type='checkbox' name='maxprice[]' value='3000'><span class="filter"> $3000</span><br>
+          <input type='checkbox' name='maxprice[]' value='4000'><span class="filter"> $4000</span><br>
+          <input type='checkbox' name='maxprice[]' value='5000'><span class="filter"> $5000</span><br>
+          <input type='checkbox' name='maxprice[]' value='6000'><span class="filter"> $6000</span><br>
           <input type="submit" name="submit" value="submit">
         </form>
 
