@@ -57,6 +57,8 @@
           <input type='checkbox' name='maxprice[]' value='6000' id="filter"> $6000<br>
           <input type="submit" name="submit" value="submit">
         </form>
+
+        <!-- Make sure only one box is checked at a time -->
         <script>
         $('input[type="checkbox"]').on('change', function() {
            $(this).siblings('input[type="checkbox"]').prop('checked', false);
