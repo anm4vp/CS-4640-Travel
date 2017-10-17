@@ -34,7 +34,8 @@ function setFocus()
             echo "<p>Welcome $username ! </p>";
           }
         } else {
-          header('Location: login.php');
+          echo '<li><p>Session not Working</p></li>';
+
         }
        ?>
      </li>
