@@ -26,7 +26,9 @@
        if(isset($_SESSION['loggedin'])){
          if ($_SESSION['loggedin'] == TRUE){
            $username = $_SESSION['username'];
-           echo "<li><p>Welcome $username ! </p></li>";
+           print '<li><a class="welcome-text">Welcome '.$username.' !</a></li>';
+
+
            echo '<li style="float:right"><a href="logout.php" class="icon fa-user-circle"> Logout</a></li>';
          }
        } else {

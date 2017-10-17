@@ -31,7 +31,9 @@ function setFocus()
         if(isset($_SESSION['loggedin'])){
           if ($_SESSION['loggedin'] == TRUE){
             $username = $_SESSION['username'];
-            echo "<p>Welcome $username ! </p>";
+            print '<li><a class="welcome-text">Welcome '.$username.' !</a></li>';
+
+
           }
         } else {
           echo '<li><p>Session not Working</p></li>';
