@@ -20,26 +20,26 @@
     <ul>
       <li><a class="active" href="index.php">Travel Website</a></li>
       <li><a class="active" href="map.php">Back To Map</a></li>
-      <li>
-        <?php
-        if (isset($_SESSION['username']))
-          {
-             $username = $_SESSION['username'];
-             echo "Welcome $username !";
-          }
-          else
-            echo '<p>Session not Working</p>';
-       ?>
-     </li>
-      <li style="float:right"><a href="#" class="icon fa-user-circle"> Login</a></li>
-      <li style="float:right"><a href="signup.php" class="icon fa-users"> Sign Up</a></li>
-      <div class="search">
-        <li style="float:right">
-          <span class="fa fa-search"></span>
-          <input type="text" placeholder="Search...">
-        </li>
-      </div>
-    </ul>
+       <?php
+       if(isset($_SESSION['loggedin'])){
+         if ($_SESSION['loggedin'] == TRUE){
+           $username = $_SESSION['username'];
+           echo "<li><p>Welcome $username ! </p></li>";
+           echo '<li style="float:right"><a href="logout.php" class="icon fa-user-circle"> Logout</a></li>';
+         }
+       } else {
+         echo '<li><p>Session not Working</p></li>';
+         echo '<li style="float:right"><a href="login.php" class="icon fa-user-circle"> Login</a></li>';
+         echo '<li style="float:right"><a href="signup.php" class="icon fa-users"> Sign Up</a></li>';
+       }
+      ?>
+     <div class="search">
+       <li style="float:right">
+         <span class="fa fa-search"></span>
+         <input type="text" placeholder="Search...">
+       </li>
+     </div>
+   </ul>
   </nav>
 
   <!-- Body -->

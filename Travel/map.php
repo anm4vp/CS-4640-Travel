@@ -1,7 +1,5 @@
 <?php session_start(); ?>
 
-<!DOCTYPE HTML>
-
 <html>
 <head>
   <title>Travel</title>
@@ -16,21 +14,21 @@
 <body>
   <!-- Header -->
   <nav class="nav">
-    <ul>
-      <li><a class="active" href="index.php">Travel Website</a></li>
-      <li>
+     <ul>
+       <li><a class="active" href="index.php">Travel Website</a></li>
         <?php
-        if (isset($_SESSION['username']))
-          {
-             $username = $_SESSION['username'];
-             echo "<p>Welcome $username ! </p>";
+        if(isset($_SESSION['loggedin'])){
+          if ($_SESSION['loggedin'] == TRUE){
+            $username = $_SESSION['username'];
+            echo "<li><p>Welcome $username ! </p></li>";
+            echo '<li style="float:right"><a href="logout.php" class="icon fa-user-circle"> Logout</a></li>';
           }
-          else
-            echo '<p>Session not Working</p>';
+        } else {
+          echo '<li><p>Session not Working</p></li>';
+          echo '<li style="float:right"><a href="login.php" class="icon fa-user-circle"> Login</a></li>';
+          echo '<li style="float:right"><a href="signup.php" class="icon fa-users"> Sign Up</a></li>';
+        }
        ?>
-     </li>
-      <li style="float:right"><a href="#" class="icon fa-user-circle"> Login</a></li>
-      <li style="float:right"><a href="signup.php" class="icon fa-users"> Sign Up</a></li>
       <div class="search">
         <li style="float:right">
           <span class="fa fa-search"></span>
@@ -44,8 +42,6 @@
 
   <!-- Map Image-->
   <a href="discover.php"><img src="images/world_map.png" width=100% height=100%></img></a>
-
-
 
   <!-- Footer  -->
   <footer id="footer">

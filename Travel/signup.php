@@ -1,7 +1,5 @@
 <?php session_start(); ?>
 
-<!DOCTYPE HTML>
-
 <html>
 <head>
   <title>Create An Account</title>
@@ -30,16 +28,17 @@ function setFocus()
       <li><a class="active" href="map.php">Back To Map</a></li>
       <li>
         <?php
-        if (isset($_SESSION['username']))
-          {
-             $username = $_SESSION['username'];
-             echo "<p>Welcome $username ! </p>";
+        if(isset($_SESSION['loggedin'])){
+          if ($_SESSION['loggedin'] == TRUE){
+            $username = $_SESSION['username'];
+            echo "<p>Welcome $username ! </p>";
           }
-          else
-            echo '<p>Session not Working</p>';
+        } else {
+          header('Location: login.php');
+        }
        ?>
      </li>
-      <li style="float:right"><a href="#" class="icon fa-user-circle"> Login</a></li>
+      <li style="float:right"><a href="login.php" class="icon fa-user-circle"> Login</a></li>
     </ul>
   </nav>
 

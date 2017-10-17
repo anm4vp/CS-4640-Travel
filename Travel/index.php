@@ -24,27 +24,27 @@
   <!-- Header -->
   <nav class="nav">
     <ul>
-      <li><a class="active" href="#home">Travel Website</a></li>
-      <li>
-        <?php
-        if (isset($_SESSION['username']))
-          {
-             $username = $_SESSION['username'];
-             echo "<p>Welcome $username ! </p>";
-          }
-          else
-            echo '<p>Session not Working</p>';
-       ?>
-     </li>
-      <li style="float:right"><a href="#" class="icon fa-user-circle"> Login</a></li>
-      <li style="float:right"><a href="signup.php" class="icon fa-users"> Sign Up</a></li>
-      <div class="search">
-        <li style="float:right">
-          <span class="fa fa-search"></span>
-          <input type="text" placeholder="Search...">
-        </li>
-      </div>
-    </ul>
+      <li><a class="active" href="index.php">Travel Website</a></li>
+       <?php
+       if(isset($_SESSION['loggedin'])){
+         if ($_SESSION['loggedin'] == TRUE){
+           $username = $_SESSION['username'];
+           echo "<li><p>Welcome $username ! </p></li>";
+           echo '<li style="float:right"><a href="logout.php" class="icon fa-user-circle"> Logout</a></li>';
+         }
+       } else {
+         echo '<li><p>Session not Working</p></li>';
+         echo '<li style="float:right"><a href="login.php" class="icon fa-user-circle"> Login</a></li>';
+         echo '<li style="float:right"><a href="signup.php" class="icon fa-users"> Sign Up</a></li>';
+       }
+      ?>
+     <div class="search">
+       <li style="float:right">
+         <span class="fa fa-search"></span>
+         <input type="text" placeholder="Search...">
+       </li>
+     </div>
+   </ul>
   </nav>
 
   <center><h1> Select a Region You Would Like to Visit </h1></center>
@@ -59,7 +59,7 @@
       <div class="container">
         <center>
           <h2><font color="white">Welcome to Travel Website</font></h2>
-          <form method="POST" name="tripname" action="#Map">
+          <form method="POST" name="tripname" action="map.php">
             <input type="text" id="trip"onclick="document.getElementById('Map').style.display='none'"  name="trip" placeholder="Name Your Trip" required></h2>
             <input type="submit" value="Start Your Journey">
           </form>
