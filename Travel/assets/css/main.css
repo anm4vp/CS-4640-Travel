@@ -101,6 +101,10 @@ button {
     width: 100%;
 }
 
+body {
+  margin: 0;
+}
+
 .signup label  {
   display: inline;
   width:180px;
@@ -247,13 +251,13 @@ button {
 .modal-content {
     margin: 10% auto 15% auto;
     border: 1px solid #27272F;
-    width: 30%;
-    height: 30%;
+    width: 40%;
+    height: 50%;
     padding: 5px 20px 13px 20px;
     background:rgba(39, 39, 47, 0.65);
 }
 
-.close {
+/*.close {
     position: sticky;
     left: 67%;
     top: 20%;
@@ -267,7 +271,7 @@ button {
 .close:focus {
     color: red;
     cursor: pointer;
-}
+}*/
 
 /* Icon */
 

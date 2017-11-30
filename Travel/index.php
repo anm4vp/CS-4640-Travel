@@ -2,7 +2,7 @@
 
 <!DOCTYPE HTML>
 
-<html>
+<html ng-app>
 <head>
   <title>Travel</title>
   <meta charset="utf-8" />
@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
   <link rel="stylesheet" href="assets/css/main.css" />
 
   <script>
@@ -61,8 +62,8 @@
         <center>
           <h2><font color="white">Welcome to Travel Website</font></h2>
           <form method="POST" name="tripname" action="map.php">
-            <input type="text" id="trip"onclick="document.getElementById('Map').style.display='none'"  name="trip" placeholder="Name Your Trip" required></h2>
-            <input type="submit" value="Start Your Journey">
+            <input type="text" ng-model="name" id="trip" onclick="document.getElementById('Map').style.display='none'"  name="trip" placeholder="Name Your Trip" required></h2>
+            <input type="submit" value="Start Your Journey: {{name}}">
           </form>
         </center>
       </div>
