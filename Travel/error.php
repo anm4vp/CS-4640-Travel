@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <html>
 <head>
   <title>Login</title>
@@ -42,6 +41,12 @@ function setFocus()
     </ul>
   </nav>
 
+  <!-- Header -->
+  <center>
+  <div id="header-wrapper">
+    <h2>Error! Login Not Valid. Please Try Again.</h2>
+    <div id="header" class="container">
+  </center>
 
   <!-- Log In -->
     <center><h1> Log In </h1></center>

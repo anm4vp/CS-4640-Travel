@@ -18,12 +18,10 @@ $username = $password = NULL;
 if (($_SERVER["REQUEST_METHOD"] == "POST")) {
 
   if (empty($_POST['username']) || empty($_POST['password']))
-  echo 'Username and Password are invalid. Please <a href="login.php"> try again.</a>';
+  header('Location: error.php');
   else
   $username = trim($_POST['username']);
   $password = trim($_POST['password']);
-
-
 
   if ($username != NULL && $password != NULL)
   {

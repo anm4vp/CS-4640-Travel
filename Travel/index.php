@@ -34,7 +34,7 @@
            echo '<li style="float:right"><a href="logout.php" class="icon fa-user-circle"> Logout</a></li>';
          }
        } else {
-         echo '<li><p>Session not Working</p></li>';
+         // echo '<li><p>Session not Working</p></li>';
          echo '<li style="float:right"><a href="login.php" class="icon fa-user-circle"> Login</a></li>';
          echo '<li style="float:right"><a href="signup.php" class="icon fa-users"> Sign Up</a></li>';
        }

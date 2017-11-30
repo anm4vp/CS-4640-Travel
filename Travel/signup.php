@@ -50,7 +50,7 @@ function setFocus()
     <center><h1> Sign Up </h1></center>
     <div class="container">
     <div class="signup">
-      <form method="POST" name="signup" action="session_set.php">
+      <form method="POST" name="signup" action="newuserquery.php">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" placeholder="Enter Username" required>
 
