@@ -11,10 +11,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <link rel="stylesheet" href="assets/css/main.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 
-<body>
+<body ng-app="myApp" ng-controller="myCtrl">
   <!-- Header -->
   <nav class="nav">
     <ul>
@@ -58,7 +59,6 @@
     <div class="container content">
       <div class="col-xs-2 filter-box">
         <h2 class="filter-text">Filter</h2>
-        <hr>
         <h4 class="filter-text-sub">Maximum Price</h4><br>
         <form method='post' id='priceform' action="">
           <input type='checkbox' name='maxprice[]' value='500'><span class="filter"> $500</span><br>
@@ -78,6 +78,7 @@
            $(this).siblings('input[type="checkbox"]').prop('checked', false);
         });
         </script>
+
         <?php
           if(isset($_POST['submit'])){
             if(empty($_POST['maxprice'])){
@@ -94,6 +95,26 @@
          ?>
         <hr>
       </div>
+
+      <h3>List All Desinations:  <input type="checkbox" ng-model="destination"></h3>
+
+      <div ng-show="destination">
+        <h4 ng-repeat="x in records">{{x}}</h4>
+      </div>
+
+      <script>
+      var app = angular.module("myApp", []);
+      app.controller("myCtrl", function($scope) {
+          $scope.records = [
+              "Hawaii",
+              "The Grand Canyon",
+              "Machu Pichu",
+              "Pyramids of Giza",
+              "The Eiffel Tower"
+          ]
+      });
+      </script>
+
       <div class="col-xs-9">
         <?php
         if (isset($_SESSION['maxprice']))
@@ -115,7 +136,7 @@
             }
           }
           print'
-          <div '.$divStyle.' class="card" onclick="alertChosen()">
+          <div '.$divStyle.' class="card" >
             <div class="container">
               <h4><b>Hawaii - United States</b></h4>
               <p>Price: $'.$price.'</p>
