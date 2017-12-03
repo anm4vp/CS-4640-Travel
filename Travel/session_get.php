@@ -39,9 +39,8 @@
       ?>
      <div class="search">
        <li style="float:right">
-         <span class="fa fa-search"></span>
-         <input type="text" placeholder="Search...">
-       </li>
+         <a href="search.html"><span class="fa fa-search" style="color: white"></span></a>
+        </li>
      </div>
    </ul>
   </nav>

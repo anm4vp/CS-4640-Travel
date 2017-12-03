@@ -30,12 +30,11 @@
           echo '<li style="float:right"><a href="signup.php" class="icon fa-users"> Sign Up</a></li>';
         }
        ?>
-      <div class="search">
-        <li style="float:right">
-          <span class="fa fa-search"></span>
-          <input type="text" placeholder="Search...">
+     <div class="search">
+       <li style="float:right">
+         <a href="search.html"><span class="fa fa-search" style="color: white"></span></a>
         </li>
-      </div>
+     </div>
     </ul>
   </nav>
 
