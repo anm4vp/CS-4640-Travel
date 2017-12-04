@@ -23,7 +23,7 @@ function setFocus()
   <!--  Header  -->
   <nav class="nav">
     <ul>
-      <li><a class="active" href="index.php">Travel Website</a></li>
+      <li><a class="active" href="http://localhost:8089/TravelDyno/index.html">Travel Website</a></li>
       <li><a class="active" href="map.php">Back To Map</a></li>
       <?php
       if(isset($_SESSION['loggedin'])){

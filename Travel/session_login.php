@@ -1,44 +1,48 @@
 <?php session_start(); ?>
 
 <?php
-// from in class example
 
-function reject($entry)
-{
-  echo 'Please <a href="login.php"> Log In</a>';
-  exit();    // exit the current script, no value is returned
-}
+$q = ($_POST['username']);
+# Connet to DB
+$db = new mysqli('localhost', 'root', '', 'Travel');
+if ($db->connect_error):
+  die ("Could not connect to db: " . $db->connect_error);
+endif;
 
-function alert($msg){
-  echo "<script type='text/javascript'>alert('$msg')</script>";
-}
+$sql="SELECT * FROM Users WHERE Username = '".$q."' ";
+$result = mysqli_query($db,$sql);
 
-$username = $password = NULL;
+if (empty($_POST['username']) || empty($_POST['password']))
+header('Location: error.php');
+else
+$username = trim($_POST['username']);
+$password = trim($_POST['password']);
 
-if (($_SERVER["REQUEST_METHOD"] == "POST")) {
+while($row = mysqli_fetch_array($result)){
 
-  if (empty($_POST['username']) || empty($_POST['password']))
-  header('Location: error.php');
-  else
-  $username = trim($_POST['username']);
-  $password = trim($_POST['password']);
+  if (($_SERVER["REQUEST_METHOD"] == "POST")) {
 
-  if ($username != NULL && $password != NULL)
-  {
-    if (isset($_POST['username']))
+    if ($username != NULL && $password != NULL)
     {
-      $username = trim($_POST['username']);
-      $_SESSION['username'] = $username;
-      $_SESSION['loggedin'] = TRUE;
+      if (isset($_POST['username']))
+      {
+        $username = trim($row['Username']);
+        $_SESSION['username'] = $username;
+        $_SESSION['loggedin'] = TRUE;
 
-      // relocate the browser to another page using the header() function to specify the target URL
-      header('Location: map.php');
+        // relocate the browser to another page using the header() function to specify the target URL
+        header('Location: http://localhost:8089/TravelDyno/index.html');
 
+      }
+      else
+      header('Location: login.php');
     }
-    else
-    header('Location: login.php');
+
   }
 
 }
+
+
+
 
 ?>

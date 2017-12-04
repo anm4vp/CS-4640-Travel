@@ -20,7 +20,7 @@
           <input type = "submit" value = "Submit" />
         </p>
         </form>
-        
+
         Entry: {{res}} <br/>
 
         Results: {{data}} <br />
@@ -30,7 +30,7 @@
    <script>
       var myApp = angular.module('myApp', []);
 
-      myApp.controller("myController", function ($scope, $http) 
+      myApp.controller("myController", function ($scope, $http)
       {
          var onSuccess = function (data, status, headers, config)
          {
@@ -41,17 +41,17 @@
          {
             $scope.error = status;
          }
-         
+
          var res = $scope.res;
          $scope.getPlace = function() {
             if ($scope.res !== undefined){
                var promise = $http.post("http://localhost/CS-4640-Travel/Travel/getDestination.php", {"res": $scope.res});
                promise.success(onSuccess);
-               promise.error(onError); 
-            }  
+               promise.error(onError);
+            }
             else
             {
-        	   $scope.data = "undefined"; 
+        	   $scope.data = "undefined";
             }
          }
       });

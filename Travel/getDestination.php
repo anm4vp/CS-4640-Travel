@@ -7,9 +7,9 @@
                      "Pyramids of Giza" => "Pyramids of Giza - Giza, Egypt. Price: $5000",
                      "Eiffel Tower" => "Eiffel Tower - Paris, France. Price: $4000"
                      );
-  
+
    $post_date = file_get_contents("php://input");
-   $data = json_decode($post_date);               
+   $data = json_decode($post_date);
     if (array_key_exists($data->res, $destination))
       print $destination[$data->res];
     else
